@@ -1,0 +1,2 @@
+Acquire::http::Proxy "http://proxy.cse.cuhk.edu.hk:8000";
+Acquire::https::Proxy "http://proxy.cse.cuhk.edu.hk:8000";

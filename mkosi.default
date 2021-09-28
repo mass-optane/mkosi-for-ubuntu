@@ -2,29 +2,36 @@
 
 [Distribution]
 Distribution=ubuntu
-# 20.04 = focal
-Release=focal
+Release=impish
+Mirror=http://ftp.cuhk.edu.hk/pub/Linux/ubuntu
+Repositories=
 
 
 [Output]
+Output=ubuntu-impish.qcow2
+QCow2=yes
 Format=gpt_ext4
 Bootable=yes
-Hostname=thegrid
+BootProtocols=uefi
+KernelCommandLine=ip=dhcp console=ttyS0,115200 console=tty console=ttyS0
+Hostname=femu
 
 
 [Partitions]
-RootSize=5G
+RootSize=8G
+ESPSize=256M
 
 
 [Packages]
 # The packages to appear in the final image
-Packages=nano less tmux ssh dnsutils curl
-
+Packages=
+         tasksel
+         neovim
+         git
 # let mkosi.postinst access the internet
-# (needed because we are updating and installing packages there)
 WithNetwork=yes
 
 
 [Validation]
 # root password
-Password=mementomori
+# Password=
